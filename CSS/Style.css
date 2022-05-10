@@ -1,16 +1,29 @@
 * {
   box-sizing: border-box;
 }
+.Button {
+  text-decoration: none;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+}
 body {
-  padding: 0 10px;
+  padding: 0px 10px;
   color: #000;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.33;
 }
 .NavBar {
+  top: 0;
+  margin-top: 0;
   max-width: 1440px;
-  height: 80px;
+  height: 100px;
   margin: 0 auto;
   background: #fff;
   -webkit-box-sizing: content-box;
@@ -36,6 +49,17 @@ body {
   align-content: center;
   justify-content: space-between;
   align-items: center;
+}
+
+.Nav-Item-List {
+  padding: 10px 10px;
+}
+.Left-Nav-Items a:hover,
+.Right-Nav-Items a:hover {
+  background-color: #000;
+  color: #fff;
+  border-radius: 22px;
+  padding: 10px 10px;
 }
 .Left-Nav-Items {
   gap: 15px;
@@ -65,10 +89,94 @@ body {
   justify-content: space-evenly;
   align-items: center;
 }
+.Hamburbur {
+  cursor: pointer;
+}
+.User-Profile {
+  cursor: pointer;
+}
+.Shopping-Cart {
+  cursor: pointer;
+}
+.Search-Logo {
+  cursor: pointer;
+}
+
+.Carousel-Area {
+  margin: 0 auto;
+  max-width: 1440px;
+  height: 60vh;
+  background-color: red;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+.Carousel-Swipe {
+  background-color: #000;
+  color: white;
+  border-radius: 50%;
+  margin: 0 10px;
+  width: 35px;
+  height: 35px;
+  opacity: 0.5;
+}
+.NavBar_Carousel {
+  align-self: flex-end;
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.NavBar_Carousel-Items {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.Navigate-Carousel {
+  z-index: 2;
+  width: 130px;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.Navigate-Carousel-Item {
+  z-index: 1;
+  color: wheat;
+  width: max-content;
+  transform: translateY(60%);
+  transition: all 200ms ease-in-out;
+  opacity: 0;
+}
+.NavBar_Carousel-Items:hover .Navigate-Carousel-Item {
+  opacity: 1;
+  transform: translateY(-10%);
+}
+.Navigate-Carousel:target {
+  background-color: cyan;
+}
+.Navigate-Carousel.Play-Pause {
+  background-color: transparent;
+  padding: 5px;
+  width: max-content;
+  height: min-content;
+}
 /* Mobile view */
 @media (min-width: 270px) and (max-width: 533px) {
   body {
     background-color: red;
+  }
+  .User-Profile {
+    display: none;
   }
 }
 /* Medium View */
@@ -79,9 +187,15 @@ body {
   .Nav-Items {
     display: none;
   }
+  .User-Profile {
+    display: none;
+  }
 }
 @media (min-width: 1280px) {
   body {
     background-color: yellow;
+  }
+  .Hamburbur {
+    display: none;
   }
 }
