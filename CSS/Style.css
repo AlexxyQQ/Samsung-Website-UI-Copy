@@ -1,0 +1,17 @@
+/* Mobile view */
+@media (min-width: 270px) and (max-width: 533px) {
+  body {
+    background-color: red;
+  }
+}
+/* Medium View */
+@media (min-width: 533px) and (max-width: 1280px) {
+  body {
+    background-color: green;
+  }
+}
+@media (min-width: 1280px) {
+  body {
+    background-color: yellow;
+  }
+}
