@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 .Button {
   text-decoration: none;
@@ -13,7 +15,7 @@
   color: #000;
 }
 body {
-  padding: 0px 10px;
+  /* padding: 0px 10px; */
   color: #000;
   font-size: 14px;
   font-weight: bold;
@@ -22,25 +24,32 @@ body {
 .NavBar {
   top: 0;
   margin-top: 0;
-  max-width: 1440px;
-  height: 100px;
+  height: 80px;
   margin: 0 auto;
   background: #fff;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
 .Inner-Bar {
-  padding: 8px 15px;
+  margin: 0 auto;
+  padding: 0 24px 0 16px;
+  vertical-align: top;
   width: 100%;
   height: 100%;
   display: flex;
+  max-width: 1440px;
   gap: 40px;
   flex-direction: row;
   flex-wrap: nowrap;
   align-content: center;
   justify-content: space-between;
   align-items: center;
+  background-color: #fff;
 }
+.Logo {
+  width: 105px;
+}
+
 .Nav-Items {
   flex: 1 1 auto;
   display: flex;
@@ -52,17 +61,17 @@ body {
 }
 
 .Nav-Item-List {
-  padding: 10px 10px;
+  padding: 7px 8px;
 }
 .Left-Nav-Items a:hover,
 .Right-Nav-Items a:hover {
   background-color: #000;
   color: #fff;
   border-radius: 22px;
-  padding: 10px 10px;
+  padding: 7px 8px;
 }
 .Left-Nav-Items {
-  gap: 15px;
+  /* gap: 15px; */
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -71,9 +80,8 @@ body {
   align-items: center;
 }
 .Right-Nav-Items {
-  outline: 1px solid white;
   display: flex;
-  gap: 15px;
+  /* gap: 15px; */
   flex-direction: row;
   flex-wrap: nowrap;
   align-content: center;
@@ -103,10 +111,10 @@ body {
 }
 
 .Carousel-Area {
-  margin: 0 auto;
+  margin: 16px auto;
   max-width: 1440px;
   height: 60vh;
-  background-color: red;
+  background-color: cyan;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -119,9 +127,15 @@ body {
   color: white;
   border-radius: 50%;
   margin: 0 10px;
-  width: 35px;
-  height: 35px;
-  opacity: 0.5;
+  width: 40px;
+  height: 40px;
+  opacity: 0.45;
+}
+.Carousel-Swipe:hover {
+  opacity: 0.9;
+}
+.Carousel-Swipe Right Button > ll {
+  fill: #fff;
 }
 .NavBar_Carousel {
   align-self: flex-end;
@@ -134,6 +148,9 @@ body {
   align-items: center;
   margin-bottom: 20px;
 }
+.NavBar_Carousel:active {
+  outline: 1px dotted black;
+}
 .NavBar_Carousel-Items {
   display: flex;
   flex-direction: column;
@@ -144,25 +161,23 @@ body {
 }
 .Navigate-Carousel {
   z-index: 2;
-  width: 130px;
+  width: 160px;
   height: 2px;
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 5px;
 }
 .Navigate-Carousel-Item {
   z-index: 1;
-  color: wheat;
+  color: white;
   width: max-content;
   transform: translateY(60%);
   transition: all 200ms ease-in-out;
   opacity: 0;
+  text-shadow: 0 0 3px rgb(0 0 0 / 75%);
 }
 .NavBar_Carousel-Items:hover .Navigate-Carousel-Item {
   opacity: 1;
   transform: translateY(-10%);
-}
-.Navigate-Carousel:target {
-  background-color: cyan;
 }
 .Navigate-Carousel.Play-Pause {
   background-color: transparent;
