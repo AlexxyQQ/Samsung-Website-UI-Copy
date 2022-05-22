@@ -3,6 +3,28 @@
   margin: 0;
   padding: 0;
 }
+@font-face {
+  font-display: swap;
+  font-family: "SamsungOne";
+  font-style: normal;
+  font-weight: normal;
+  src: url(../Assets/samsungone/SamsungOne-400.ttf);
+}
+@font-face {
+  font-display: swap;
+  font-family: "SamsungOne";
+  font-style: normal;
+  font-weight: bold;
+  src: url(../Assets/samsungone/SamsungOne-700.ttf);
+}
+@font-face {
+  font-display: swap;
+  font-family: "SamsungSharpSans";
+  font-style: normal;
+  font-weight: bold;
+  src: url(../Assets/samsungone/SamsungSharpSans-Bold.ttf);
+}
+
 .Button {
   text-decoration: none;
   background-color: transparent;
@@ -14,9 +36,13 @@
   align-items: center;
   color: #000;
 }
+.icons {
+  width: 24px;
+}
 body {
   /* padding: 0px 10px; */
   color: #000;
+  font-family: SamsungOne;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.33;
@@ -47,7 +73,11 @@ body {
   background-color: #fff;
 }
 .Logo {
+  filter: brightness(0%);
   width: 105px;
+}
+.Inner-Bar > .Logo-Box {
+  margin-top: 5px;
 }
 
 .Nav-Items {
@@ -71,7 +101,7 @@ body {
   padding: 7px 8px;
 }
 .Left-Nav-Items {
-  /* gap: 15px; */
+  margin-left: 30px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -89,7 +119,7 @@ body {
   align-items: center;
 }
 .Nav-Icons {
-  gap: 15px;
+  gap: 25px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -113,7 +143,7 @@ body {
 .Carousel-Area {
   margin: 16px auto;
   max-width: 1440px;
-  height: 60vh;
+  height: 639px;
   background-color: cyan;
   display: flex;
   flex-direction: row;
@@ -146,18 +176,23 @@ body {
   align-content: center;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
-.NavBar_Carousel:active {
-  outline: 1px dotted black;
-}
-.NavBar_Carousel-Items {
+
+.NavBar_Carousels {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-content: center;
   justify-content: center;
   align-items: center;
+}
+.NavBar_Carousels:active {
+  outline: 1px dotted black;
+}
+
+#activate-div:checked + .my-div {
+  background-color: #000;
 }
 .Navigate-Carousel {
   z-index: 2;
@@ -175,16 +210,84 @@ body {
   opacity: 0;
   text-shadow: 0 0 3px rgb(0 0 0 / 75%);
 }
-.NavBar_Carousel-Items:hover .Navigate-Carousel-Item {
+.NavBar_Carousels:hover .Navigate-Carousel-Item {
   opacity: 1;
   transform: translateY(-10%);
 }
 .Navigate-Carousel.Play-Pause {
+  margin-top: 20px;
   background-color: transparent;
   padding: 5px;
   width: max-content;
   height: min-content;
 }
+
+.Offers-Area {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.Offer-Text {
+  padding-top: 30px;
+  font-family: "SamsungSharpSans", arial, sans-serif;
+  font-size: 38px;
+  font-weight: bold;
+  display: -webkit-box;
+  margin: 0 auto;
+}
+
+.Offer-Items-Area {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.Offers-Nav {
+  display: flex;
+  gap: 50px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.Offers-Nav a:hover {
+  color: #555555;
+}
+.Offers-Nav-Items {
+  font-size: 18px;
+  padding-top: 35px;
+}
+
+.Offer-Items-Cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.Items-Cards {
+  display: flex;
+  background-color: #f4f4f4;
+  border-radius: 20px;
+}
+
+.Smartphone-Offers-Area {
+  display: flex;
+}
+.Smartphone-One {
+  width: 500px;
+  height: 800px;
+}
+
 /* Mobile view */
 @media (min-width: 270px) and (max-width: 533px) {
   body {
@@ -208,7 +311,7 @@ body {
 }
 @media (min-width: 1280px) {
   body {
-    background-color: yellow;
+    background-color: white;
   }
   .Hamburbur {
     display: none;
