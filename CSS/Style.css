@@ -258,6 +258,7 @@ body {
 .Product-Nav-Scroll {
   overflow-y: scroll;
   width: 100vw;
+  cursor: grab;
 }
 .Product-Nav-Scroll::-webkit-scrollbar {
   display: none;
@@ -289,8 +290,18 @@ body {
 
 .Products-Items-Cards {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr));
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
   width: 100vw;
-  overflow: hidden;
+  overflow: scroll;
+  gap: 1rem;
+}
+.Products-Items-Cards::-webkit-scrollbar {
+  display: none;
+}
+.Products-Area:nth-child(2n + 0) {
+  background-color: #f5f2f1;
 }
 
 .Smartphone-Offers-Area {
@@ -337,6 +348,74 @@ body {
   margin-bottom: 40px;
 }
 
+[class*="Products_Items-"] {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+.Product-Image-Box {
+  margin-top: 50px;
+  width: 80vw;
+  border-radius: 20px;
+  background-color: #c5ddb9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Products_Product {
+  width: 45%;
+  padding: 20px 0;
+}
+.Products_Product-Title {
+  width: 100%;
+  margin-bottom: 8px;
+  font-family: "SamsungSharpSans", arial, sans-serif;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 1.2;
+  text-align: center;
+  word-wrap: break-word;
+  white-space: normal;
+}
+.Products_Product-Description {
+  width: 100%;
+  margin-bottom: 8px;
+  font-size: 18px;
+  line-height: 1.33;
+  text-align: center;
+  word-wrap: break-word;
+  white-space: normal;
+}
+.Products_BuyNow {
+  background-color: black;
+  color: white;
+  font-size: 3.88888889vw;
+  line-height: 5.27777778vw;
+  padding: 2.77777778vw 6.66666667vw 3.05555556vw 6.66666667vw;
+  border-radius: 5.55555556vw;
+  font-weight: 700;
+  margin-bottom: 3.05555556vw;
+}
+.Products_LearnMore {
+  margin-top: 2.22222222vw;
+  color: #000 !important;
+  padding: 2.77777778vw 0vw 0vw 0vw;
+  margin-bottom: 3.05555556vw;
+  font-size: 3.88888889vw;
+  line-height: 5.27777778vw;
+  border-bottom: 3px solid #000;
+  width: auto;
+  transition: all 200ms cubic-bezier(0.33, 0, 0.3, 1);
+  white-space: nowrap;
+}
+.Products_LearnMore:hover {
+  transition: all 500ms cubic-bezier(0.33, 0, 0.3, 1);
+  width: 0%;
+}
 /* Mobile view */
 @media (min-width: 270px) and (max-width: 533px) {
   body {
@@ -431,10 +510,12 @@ body {
   }
 
   .Products-Text {
+    margin-top: 8.88888889vw;
+    font-size: 7.22222222vw;
+    line-height: 1.33;
     text-align: center;
     max-width: 86.66666667vw;
     max-height: 20vw;
-    margin-bottom: 4.44444444vw;
     font-size: 7.22222222vw;
   }
   .Products-Nav {
@@ -444,11 +525,6 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  .Products-Items-Area__inner::-webkit-scrollbar,
-  .Products-Nav::-webkit-scrollbar {
-    display: none !important;
-  }
-
   .Products-Items-Cards {
     margin: 0 auto;
   }
@@ -488,6 +564,16 @@ body {
     font-size: 2.77777778vw;
     max-width: fit-content;
     margin: 0;
+  }
+
+  .Products_Product-Title {
+    margin-bottom: 2.22222222vw;
+    font-size: 8.33333333vw;
+    line-height: 1.33;
+  }
+  .Products_Product-Description {
+    margin-bottom: 2.22222222vw;
+    font-size: 3.88888889vw;
   }
 }
 /* Medium View */
