@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <input type="checkbox" id="activate-div" />
+    <label for="activate-div" class="a"> //MY BUTTON STUFF </label>
+
+    <div class="ass">asdljkasjkdjaslk</div>
+
+    <style>
+      .ass {
+        height: 250px;
+        width: 250px;
+        background: red;
+      }
+      #activate-div {
+        display: none;
+      }
+
+      .my-div {
+        background-color: #fff;
+      }
+
+      #activate-div:checked + .a {
+        background-color: #000;
+      }
+    </style> -->
+
+    -------------------
+
+    <!-- <style>
+      #uncheck > input {
+        display: none;
+      }
+      input:checked + label {
+        display: none;
+      }
+      input:not(:checked) + label + label {
+        display: none;
+      }
+    </style>
+
+    <div id="uncheck">
+      <input type="radio" name="food" id="box1" />
+      Pizza
+      <label for="box1">&#9678;</label>
+      <label for="box0">&#9673;</label>
+      <input type="radio" name="food" id="box2" />
+      Ice cream
+      <label for="box2">&#9678;</label>
+      <label for="box0">&#9673;</label>
+      <input type="radio" name="food" id="box0" checked />
+    </div> -->
+
+    <div>
+      <input type="radio" name="my-input" id="yes" />
+      <label for="yes">Yes</label>
+
+      <input type="radio" name="my-input" id="no" />
+      <label for="no">No</label>
+    </div>
+
+    <style>
+      div,
+      select {
+        margin: 8px;
+      }
+
+      /* Labels for checked inputs */
+      input:checked + label {
+        color: red;
+      }
+
+      /* Radio element, when checked */
+      input[type="radio"]:checked {
+        box-shadow: 0 0 0 3px orange;
+      }
+
+      /* Checkbox element, when checked */
+      input[type="checkbox"]:checked {
+        box-shadow: 0 0 0 3px hotpink;
+      }
+
+      /* Option elements, when selected */
+      option:checked {
+        box-shadow: 0 0 0 3px lime;
+        color: red;
+      }
+    </style>
+  </body>
+</html>
