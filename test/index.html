@@ -7,89 +7,170 @@
     <title>Document</title>
   </head>
   <body>
-    <!-- <input type="checkbox" id="activate-div" />
-    <label for="activate-div" class="a"> //MY BUTTON STUFF </label>
-
-    <div class="ass">asdljkasjkdjaslk</div>
-
+    <div class="ass">
+      <div id="nav">
+        <label class="color-box" id="color-box1" for="color-box-input1"></label>
+        <label class="color-box" id="color-box2" for="color-box-input2"></label>
+        <label class="color-box" id="color-box3" for="color-box-input3"></label>
+        <label class="color-box" id="color-box4" for="color-box-input4"></label>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="" id="background">
+        <input type="radio" name="color" id="color-box-input1" checked />
+        <input type="radio" name="color" id="color-box-input2" />
+        <input type="radio" name="color" id="color-box-input3" />
+        <input type="radio" name="color" id="color-box-input4" />
+        <div class="choose-color-bg one">
+          <div class="ass">SADasdas</div>
+        </div>
+        <div class="choose-color-bg two">
+          <div class="ass">SADasdas</div>
+        </div>
+        <div class="choose-color-bg three">
+          <div class="ass">SADasdas</div>
+        </div>
+        <div class="choose-color-bg four">
+          <div class="ass">SADasdas</div>
+        </div>
+        <div class="choose-color-bg five">
+          <div class="ass">SADasdas</div>
+        </div>
+      </div>
+    </div>
     <style>
-      .ass {
-        height: 250px;
-        width: 250px;
+      .wrapper {
+        margin: 50px auto;
+        position: relative;
+        overflow: hidden;
+      }
+
+      #nav {
+        width: 100%;
+        height: 50px;
+        background-color: #ccc;
+      }
+
+      #background {
+        width: 100vw;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+        gap: 2px;
+        -webkit-overflow-scrolling: touch;
+        overflow-y: scroll;
+        background: #303;
+        height: 100px;
+        width: 100vw;
+      }
+
+      /*......................................*/
+
+      .color-box {
+        -moz-border-radius: 7px;
+        -webkit-border-radius: 7px;
+        border-radius: 7px;
+        border: 2px solid black;
+        float: left;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        margin-left: 10px;
+      }
+
+      #color-box1 {
+        background-color: red;
+      }
+
+      #color-box-input1:checked ~ .choose-color-bg.one {
+        display: block;
+        position: relative;
+        z-index: 1;
+        visibility: visible;
+        transform: translateX(0%);
         background: red;
       }
-      #activate-div {
+
+      #color-box2 {
+        background-color: blue;
+      }
+
+      #color-box-input2:checked ~ .choose-color-bg.two {
+        display: block;
+        position: relative;
+        z-index: 1;
+        visibility: visible;
+        transform: translateX(0%);
+        background: blue;
+      }
+
+      #color-box3 {
+        background-color: green;
+      }
+
+      #color-box-input3:checked ~ .choose-color-bg.three {
+        display: block;
+        background-color: green;
+      }
+
+      #color-box4 {
+        background-color: yellow;
+      }
+
+      #color-box-input4:checked ~ .choose-color-bg.four {
+        display: block;
+        background-color: yellow;
+      }
+
+      #color-box-input1 {
         display: none;
       }
 
-      .my-div {
-        background-color: #fff;
-      }
-
-      #activate-div:checked + .a {
-        background-color: #000;
-      }
-    </style> -->
-
-    -------------------
-
-    <!-- <style>
-      #uncheck > input {
+      #color-box-input2 {
         display: none;
       }
-      input:checked + label {
+      #color-box-input3 {
         display: none;
       }
-      input:not(:checked) + label + label {
+      #color-box-input4 {
         display: none;
       }
-    </style>
 
-    <div id="uncheck">
-      <input type="radio" name="food" id="box1" />
-      Pizza
-      <label for="box1">&#9678;</label>
-      <label for="box0">&#9673;</label>
-      <input type="radio" name="food" id="box2" />
-      Ice cream
-      <label for="box2">&#9678;</label>
-      <label for="box0">&#9673;</label>
-      <input type="radio" name="food" id="box0" checked />
-    </div> -->
-
-    <div>
-      <input type="radio" name="my-input" id="yes" />
-      <label for="yes">Yes</label>
-
-      <input type="radio" name="my-input" id="no" />
-      <label for="no">No</label>
-    </div>
-
-    <style>
-      div,
-      select {
-        margin: 8px;
+      .one {
+        display: block;
+        visibility: hidden;
+        z-index: -1;
+        position: absolute;
+        transform: translateX(-20%);
+        transition: all 500ms ease-in-out;
+      }
+      .two {
+        display: block;
+        visibility: hidden;
+        z-index: -2;
+        position: absolute;
+        left: 0;
+        right: 0;
+        transform: translateX(-20%);
+        transition: all 500ms ease-in-out;
+      }
+      .three {
+        display: none;
+      }
+      .four {
+        display: none;
+      }
+      .five {
+        display: none;
       }
 
-      /* Labels for checked inputs */
-      input:checked + label {
-        color: red;
-      }
-
-      /* Radio element, when checked */
-      input[type="radio"]:checked {
-        box-shadow: 0 0 0 3px orange;
-      }
-
-      /* Checkbox element, when checked */
-      input[type="checkbox"]:checked {
-        box-shadow: 0 0 0 3px hotpink;
-      }
-
-      /* Option elements, when selected */
-      option:checked {
-        box-shadow: 0 0 0 3px lime;
-        color: red;
+      .choose-color-bg {
+        margin: 0 auto;
+        position: relative;
+        width: 200px;
+        height: 300px;
+        background-color: pink;
       }
     </style>
   </body>

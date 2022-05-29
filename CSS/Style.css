@@ -288,9 +288,6 @@ body {
 .Products-Nav-Items-checkbutton {
   display: none;
 }
-.Products-Nav-Items-checkbutton:checked + .Products-Nav-Items {
-  border-bottom: 3px solid black;
-}
 
 .Products-Nav-Items {
   scroll-snap-align: center;
@@ -300,20 +297,37 @@ body {
   padding-bottom: 1.11111111vw;
   width: max-content;
   padding-top: 35px;
+  width: auto;
+  transition: all 200ms cubic-bezier(0.33, 0, 0.3, 1);
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+}
+.Products-Nav-Items-checkbutton:checked ~ .Products-Nav-Items {
+  border-bottom: 3px solid black;
 }
 .Products-Nav-Items:focus {
   scroll-margin: 20px;
   scroll-padding: 20px;
 }
 .Products-Items-Cards {
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr));
   grid-auto-flow: column;
-  grid-auto-columns: 1fr;
+  grid-auto-columns: 1fr; */
+  display: flex;
   width: 100vw;
   overflow: scroll;
   gap: 1rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
+
 .Products-Items-Cards::-webkit-scrollbar {
   display: none;
 }
@@ -366,6 +380,7 @@ body {
 }
 
 [class*="Products_Items-"] {
+  scroll-snap-align: center;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -434,11 +449,28 @@ body {
   width: 0%;
 }
 
-.Products_Items-Galaxy-Buds2 {
+/* Secnond Nav */
+#Second-Nav-One:checked ~ .Products_Items-Galazy-Z-Fold3-5G {
+  display: flex;
+}
+#Second-Nav-Two:checked ~ .Products_Items-Galaxy-Buds2 {
+  display: flex;
+}
+#Second-Nav-Three:checked ~ .Products_Items-Certified-Re-Newed {
+  display: flex;
+}
+#Second-Nav-Four:checked ~ .Products_Items-Galaxy-Tab-S7-FE {
+  display: flex;
+}
+#Second-Nav-Five:checked ~ .Products_Items-Samsung-Odyssey-Neo-G8 {
+  display: flex;
+}
+
+.Products_Items-Galazy-Z-Fold3-5G {
   display: none;
 }
-#Second-Nav-Two:checked + .Products_Items-Galazy-Z-Fold3-5G {
-  display: none !important;
+.Products_Items-Galaxy-Buds2 {
+  display: none;
 }
 .Products_Items-Certified-Re-Newed {
   display: none;
@@ -448,6 +480,74 @@ body {
 }
 .Products_Items-Samsung-Odyssey-Neo-G8 {
   display: none;
+}
+
+/* Third Nav */
+#Third-Nav-One:checked ~ .Products_Items-MX-T70-Sound-Tower {
+  display: flex;
+}
+#Third-Nav-Two:checked ~ .Products_Items-The-Freestyle {
+  display: flex;
+}
+#Third-Nav-Three:checked ~ .Products_Items-The-Frame {
+  display: flex;
+}
+
+.Products_Items-MX-T70-Sound-Tower {
+  display: none;
+}
+.Products_Items-The-Freestyle {
+  display: none;
+}
+.Products_Items-The-Frame {
+  display: none;
+}
+
+/* Fourth Nav */
+#Fourth-Nav-One:checked ~ .Products_Items-Summer-Savings {
+  display: flex;
+}
+#Fourth-Nav-Two:checked ~ .Products_Items-Dishwasher {
+  display: flex;
+}
+#Fourth-Nav-Three:checked ~ .Products_Items-Bespoke-Kitchen {
+  display: flex;
+}
+
+.Products_Items-Summer-Savings {
+  display: none;
+}
+.Products_Items-Dishwasher {
+  display: none;
+}
+.Products_Items-Bespoke-Kitchen {
+  display: none;
+}
+
+/* Fifth Nav */
+#Fifth-Nav-One:checked ~ .Products_Items-Patner {
+  display: flex;
+}
+#Fifth-Nav-Two:checked ~ .Products_Items-Sus-at-Samsung {
+  display: flex;
+}
+#Fifth-Nav-Three:checked ~ .Products_Items-Eco-Inno {
+  display: flex;
+}
+
+.Products_Items-Patner {
+  display: none;
+}
+.Products_Items-Sus-at-Samsung {
+  display: none;
+}
+.Products_Items-Eco-Inno {
+  display: none;
+}
+
+.Products-Nav-Items:focus-within,
+.Products-Nav-Items:hover ~ .Products_Items-Galazy-Z-Fold3-5G::after {
+  background-color: red;
 }
 
 /* Mobile view */
