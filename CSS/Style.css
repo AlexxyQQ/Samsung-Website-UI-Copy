@@ -302,9 +302,9 @@ body {
   white-space: nowrap;
   border-bottom: 3px solid transparent;
 }
-.Products-Nav-Items-checkbutton:checked ~ .Products-Nav-Items {
+/* .Products-Nav-Items:hover {
   border-bottom: 3px solid black;
-}
+} */
 .Products-Nav-Items:focus {
   scroll-margin: 20px;
   scroll-padding: 20px;
@@ -388,6 +388,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100vw;
+  height: 696.9px;
 }
 .Product-Image-Box {
   margin-top: 50px;
@@ -412,6 +413,7 @@ body {
   text-align: center;
   word-wrap: break-word;
   white-space: normal;
+  padding: 0 20px;
 }
 .Products_Product-Description {
   width: 100%;
@@ -421,6 +423,7 @@ body {
   text-align: center;
   word-wrap: break-word;
   white-space: normal;
+  padding: 0 20px;
 }
 .Products_BuyNow {
   background-color: black;
@@ -483,23 +486,23 @@ body {
 }
 
 /* Third Nav */
-#Third-Nav-One:checked ~ .Products_Items-MX-T70-Sound-Tower {
+#Third-Nav-One:checked ~ .Products_Items-The-Frame {
   display: flex;
 }
-#Third-Nav-Two:checked ~ .Products_Items-The-Freestyle {
+#Third-Nav-Two:checked ~ .Products_Items-QLED {
   display: flex;
 }
-#Third-Nav-Three:checked ~ .Products_Items-The-Frame {
+#Third-Nav-Three:checked ~ .Products_Items-The-OLED {
   display: flex;
 }
 
-.Products_Items-MX-T70-Sound-Tower {
-  display: none;
-}
-.Products_Items-The-Freestyle {
-  display: none;
-}
 .Products_Items-The-Frame {
+  display: none;
+}
+.Products_Items-QLED {
+  display: none;
+}
+.Products_Items-The-OLED {
   display: none;
 }
 
